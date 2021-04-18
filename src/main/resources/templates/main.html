@@ -1,0 +1,379 @@
+<!doctype html>
+<html>
+    <head th:replace="fragments/common :: head('main')">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+            crossorigin="anonymous">
+
+        <title>Hello, world!</title>
+        <!-- Custom styles for this template -->
+        <link href="dashboard.css" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">부동산 실거래가</a>
+            <button
+                class="navbar-toggler position-absolute d-md-none collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#sidebarMenu"
+                aria-controls="sidebarMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <input
+                class="form-control form-control-dark w-100"
+                type="text"
+                placeholder="Search"
+                aria-label="Search">
+            <ul class="navbar-nav px-3">
+                <li class="nav-item text-nowrap">
+                    <a class="nav-link" href="#">Sign out</a>
+                </li>
+            </ul>
+        </header>
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav
+                    id="sidebarMenu"
+                    class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                    <div class="position-sticky pt-3">
+                        <form action="#" th:action="@{/apart/time}" th:object="${option}" method="post">
+                            
+                            <h4>OPTION</h4>
+                            <div class="form-floating">
+                                <select class="form-select"  th:field="*{dong}" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="잠실동" selected>잠실동</option>
+                                    <option value="신천동">신천동</option>
+                                    <option value="풍납동">풍납동</option>
+                                    <option value="송파동">송파동</option>
+                                    <option value="석촌동">석촌동</option>
+                                    <option value="삼전동">삼전동</option>
+                                    <option value="가락동">가락동</option>
+                                    <option value="문정동">문정동</option>
+                                    <option value="장지동">장지동</option>
+                                    <option value="방이동">방이동</option>
+                                    <option value="오금동">오금동</option>
+                                    <option value="거여동">거여동</option>
+                                    <option value="마천동">마천동</option>
+                                </select>
+                                <label for="floatingSelect">동 선택</label>
+                            </div>
+                           
+                            <div id="year" class="row">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" th:field="*{year}" name="flexRadioDefault" id="flexRadioDefault1" value="1">
+                                    <label class="form-check-label" for="flexRadioDefault1">
+                                        1년
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" th:field="*{year}" name="flexRadioDefault" id="flexRadioDefault2" value="2">
+                                    <label class="form-check-label" for="flexRadioDefault2">
+                                        2년
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" th:field="*{year}" name="flexRadioDefault" id="flexRadioDefault3" value="3">
+                                    <label class="form-check-label" for="flexRadioDefault3">
+                                        3년
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" th:field="*{year}" name="flexRadioDefault" id="flexRadioDefault4" value="4">
+                                    <label class="form-check-label" for="flexRadioDefault4">
+                                        4년
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" th:field="*{year}" name="flexRadioDefault" id="flexRadioDefault5" value="5">
+                                    <label class="form-check-label" for="flexRadioDefault5">
+                                        5년
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="form-floating">
+                                <select class="form-select" th:field="*{area}" id="floatingSelect" aria-label="Floating label select example">
+                                    <option value="0" selected>평수(㎡) 선택하기</option>
+                                    <option value="0,70">0㎡~70㎡</option>
+                                    <option value="70,90">70㎡~90㎡</option>
+                                    <option value="90,120">90㎡~120㎡</option>
+                                    <option value="120,140">120㎡~140㎡</option>
+                                    <option value="140,180">140㎡~180㎡</option>
+                                    <option value="180,230">180㎡~230㎡</option>
+                                </select>
+                                <label for="floatingSelect">전용면적</label>
+                            </div>
+                            
+                            <input id="btn" class="btn btn-primary" type="submit" value="확인">
+                        </form>
+                        </div>
+                    </nav>
+                    
+                    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                        <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                        <h1 class="h2">지표</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <div class="btn-group me-2">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                            </div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                                <span data-feather="calendar"></span>
+                                This week
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <div><h1 id="text">실거래가</h1></div>
+                            <div id="chartdiv"></div>
+                        </div>
+                        <div class="col">
+                            <div><h1 id="text">지역별 거래량</h1></div>
+                            <!-- <div id="chartdiv2"></div> -->
+                            <div id="map" style="width:100%;height:500px;"></div>
+                        </div>
+                    </div>
+                   
+
+
+                    <h2>아파트 거래목록</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>거래년도</th>
+                                    <th>월</th>
+                                    <th>주소</th>
+                                    <th>아파트명</th>
+                                    <th>면적</th>
+                                    <th>거래가격</th>
+                                    <th>층</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="apartment:${apartlist}">
+                                    <td th:text="${apartment.id}">-</td>
+                                    <td th:text="${apartment.changeyear}+'년'">-</td>
+                                    <td th:text="${apartment.month}+'월'">-</td>
+                                    <td th:text="${apartment.roadname}">-</td>
+                                    <td th:text="${apartment.apartname}">-</td>
+                                    <td th:text="${apartment.area}+'㎡'">-</td>
+                                    <td th:text="${apartment.samount}+'만원'">-</td>
+                                    <td th:text="${apartment.floor}+'층'">-</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+        <script th:inline="javascript">
+            
+
+            am4core.ready(function () {
+                 
+                // Themes begin
+                am4core.useTheme(am4themes_animated);
+                // Themes end Create chart instance
+                var chart = am4core.create("chartdiv", am4charts.XYChart);
+                
+
+                // Add data
+                var data1 = chart.data = [
+                    {
+                        "date": new Date(2020, 11, 3),
+
+                        "by": 40000,
+                        "bValue": 0.3
+                    }, {
+                        "date": new Date(2020, 0, 2),
+
+                        "by": 22000,
+                        "bValue": 0.3
+                    }, {
+                        "date": new Date(2020, 0, 2),
+
+                        "by": 53000,
+                        "bValue": 0.3
+                    }, {
+                        "date": new Date(2020, 2, 4),
+
+                        "by": 77000,
+                        "bValue": 0.3
+                    }
+                ];
+                 
+
+                /*[# th:each="apartment : ${apartlist}"]*/
+                data2={"date": new Date(/*[[${apartment.changeyear}]]*/'noValue',/*[[${apartment.month}]]*/'noValue',/*[[${apartment.day}]]*/'noValue'),   "by":/*[[${apartment.numamount}]]*/'noValue',"bValue":0.3}
+                data1.push(data2);
+                /*[/]*/
+
+
+                // Create axes
+                var xAxis = chart
+                    .xAxes
+                    .push(new am4charts.DateAxis());
+                //xAxis.dataFields.category = "category";
+                xAxis.renderer.grid.template.location = 0;
+                // xAxis.baseInterval = {     "timeUnit": "day",     "count": 1 };
+                // xAxis.renderer.minGridDistance = 30;
+                xAxis
+                    .periodChangeDateFormats
+                    .setKey("day month", "[bold]yyyy[/]");
+
+                var yAxis = chart
+                    .yAxes
+                    .push(new am4charts.ValueAxis());
+
+                // Create series
+                var series1 = chart
+                    .series
+                    .push(new am4charts.LineSeries());
+                series1.dataFields.valueY = "ay";
+                series1.dataFields.dateX = "date";
+                series1.dataFields.value = "aValue";
+                series1.strokeOpacity = 0;
+                series1.cursorTooltipEnabled = false;
+
+                var bullet1 = series1
+                    .bullets
+                    .push(new am4charts.CircleBullet());
+                bullet1.tooltipText = "x:{valueX} y:{valueY}";
+                bullet1.fill = am4core.color("green");
+                series1
+                    .heatRules
+                    .push({target: bullet1.circle, min: 1, max: 60, property: "radius"});
+
+                var series2 = chart
+                    .series
+                    .push(new am4charts.LineSeries());
+                series2.dataFields.valueY = "by";
+                series2.dataFields.dateX = "date";
+                series2.dataFields.value = "bValue";
+                series2.strokeOpacity = 0;
+                series2.cursorTooltipEnabled = false;
+
+                var bullet2 = series2.bullets.push(new am4charts.Bullet());
+                bullet2.tooltipText = "x:{valueX} y:{valueY}";
+
+                var rectangle2 = bullet2.createChild(am4core.Rectangle);
+                rectangle2.verticalCenter = "middle"; rectangle2.horizontalCenter = "middle";
+                rectangle2.width = 5; rectangle2.height = 5; rectangle2.rotation = 45;
+                rectangle2.stroke = am4core.color("#fff"); rectangle2.strokeWidth = 1;
+                rectangle2.nonScalingStroke = true; series2.heatRules.push({   target:
+                rectangle2,   min: 1,   max: 6,   property: "scale" });  
+                
+                chart.cursor = new am4charts.XYCursor();
+                chart.cursor.behavior = "zoomXY";
+                
+                // Add scrollbars
+                chart.scrollbarX = new am4core.Scrollbar();
+                chart.scrollbarY = new am4core.Scrollbar();
+            }); // end am4core.ready()
+            
+
+        </script>
+        <script th:inline="javascript">
+            
+            var markers = [];  
+            
+            /*[# th:each="apartment : ${apartlist}"]*/
+            //alert(/*[[${apartment.x}]]*/'abc');
+            var latlng = new naver.maps.LatLng(/*[[${apartment.x}]]*/0.0, /*[[${apartment.y}]]*/0.0);
+            var marker = new naver.maps.Marker({
+                position: latlng,
+                draggable: true
+            });
+            markers.push(marker);        
+            /*[/]*/  
+
+            var map = new naver.maps.Map("map", {
+                zoom: 14,
+                center: new naver.maps.LatLng(37.507701576545685, 127.09615495102507),
+                zoomControl: true,
+                zoomControlOptions: {
+                    position: naver.maps.Position.TOP_LEFT,
+                    style: naver.maps.ZoomControlStyle.SMALL
+                }
+            });
+
+            var htmlMarker1 = {
+                    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/images/cluster-marker-1.png);background-size:contain;"></div>',
+                    size: N.Size(40, 40),
+                    anchor: N.Point(20, 20)
+                },
+                htmlMarker2 = {
+                    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/images/cluster-marker-2.png);background-size:contain;"></div>',
+                    size: N.Size(40, 40),
+                    anchor: N.Point(20, 20)
+                },
+                htmlMarker3 = {
+                    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/images/cluster-marker-3.png);background-size:contain;"></div>',
+                    size: N.Size(40, 40),
+                    anchor: N.Point(20, 20)
+                },
+                htmlMarker4 = {
+                    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/images/cluster-marker-4.png);background-size:contain;"></div>',
+                    size: N.Size(40, 40),
+                    anchor: N.Point(20, 20)
+                },
+                htmlMarker5 = {
+                    content: '<div style="cursor:pointer;width:40px;height:40px;line-height:42px;font-size:10px;color:white;text-align:center;font-weight:bold;background:url(/images/cluster-marker-5.png);background-size:contain;"></div>',
+                    size: N.Size(40, 40),
+                    anchor: N.Point(20, 20)
+                };
+
+            var markerClustering = new MarkerClustering({
+                minClusterSize: 2,
+                maxZoom: 17,
+                map: map,
+                markers: markers,
+                disableClickZoom: false,
+                gridSize: 120,
+                icons: [htmlMarker1, htmlMarker2, htmlMarker3, htmlMarker4, htmlMarker5],
+                indexGenerator: [10, 100, 200, 500, 1000],
+                stylingFunction: function(clusterMarker, count) {
+                    $(clusterMarker.getElement()).find('div:first-child').text(count);
+                }
+            });
+        
+            
+        </script>
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!-- <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
+        crossorigin="anonymous"></script> <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
+        crossorigin="anonymous"></script> -->
+    </body>
+</html>
