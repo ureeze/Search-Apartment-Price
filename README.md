@@ -11,7 +11,14 @@
 • AmChart.JS 라이브러리를 이용하여 XY그래프형식으로 거래시점에 대한 실거래가 표현  
 
 ## 사용언어
-JAVA, HTML/CSS , JavaScript
++ JAVA 8
++ HTML/CSS
++ JavaScript
 
 ## 사용 라이브러리 및 프레임워크
-Spring Boot, AmChart.JS, Spring Data JPA, MySQL, Thymeleaf
++ Spring Boot 2.4.1
++ AmChart.JS
++ Spring Data JPA
++ MySQL
++ Thymeleaf
++ JSON.simple
