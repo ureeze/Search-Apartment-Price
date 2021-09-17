@@ -3,7 +3,6 @@
 지역/전용면적/기간을 기준으로 시세파악을 쉽게 할 수 있는 서비스 제공  
 
 ![그림1](https://user-images.githubusercontent.com/37195463/115117752-142bc880-9fdb-11eb-9af3-a247e60f94ac.png)
-![그림2](https://user-images.githubusercontent.com/37195463/115117749-12620500-9fdb-11eb-9e1e-8bdbff38248c.png)
 ![apart list](https://user-images.githubusercontent.com/37195463/133756031-9e875dc6-10bd-498c-9799-63aecc5a8fbd.png)
 ![xymap](https://user-images.githubusercontent.com/37195463/133756039-10fdf78d-1e4c-45a8-8451-b6454ec6d522.png)
 ![apart map](https://user-images.githubusercontent.com/37195463/133756043-795c317c-069d-4457-92d0-ad5acc1a5904.png)
