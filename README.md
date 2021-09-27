@@ -21,7 +21,7 @@
 + Thymeleaf
 + JSON.simple
 
-## 
+## 전체화면
 ![그림1](https://user-images.githubusercontent.com/37195463/115117752-142bc880-9fdb-11eb-9af3-a247e60f94ac.png)
 
 ## 아파트 거래목록
