@@ -21,16 +21,16 @@
 > Thymeleaf  
 > JSON.simple  
 
-## 전체화면
+## 1. 전체화면
 ![그림1](https://user-images.githubusercontent.com/37195463/115117752-142bc880-9fdb-11eb-9af3-a247e60f94ac.png)
 
-## 아파트 거래목록
+## 2. 아파트 거래목록
 ![apart list2](https://user-images.githubusercontent.com/37195463/134794276-4acf471f-a30d-4853-9bd0-4f4331b891d2.png)
 
-## 실거래가
+## 3. 실 거래가
 ![xymap2](https://user-images.githubusercontent.com/37195463/134794216-c33f7b43-cb6e-4223-b0a2-8b4d65f7aa14.png)
 
-## 지역별 거래량
+## 4. 지역별 거래량
 > 아파트 거래량을 네이버지도 API를 이용하여 클러스터화 하여 직관적으로 표현
 
 ![apart map2](https://user-images.githubusercontent.com/37195463/134794213-dcd248da-eac7-4527-8d6f-43b100d54239.png)
