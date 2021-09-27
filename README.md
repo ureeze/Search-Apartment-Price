@@ -27,7 +27,7 @@
 ## 2. 아파트 거래목록
 ![apart list2](https://user-images.githubusercontent.com/37195463/134794276-4acf471f-a30d-4853-9bd0-4f4331b891d2.png)
 
-## 3. 실 거래가
+## 3. 실거래가
 ![xymap2](https://user-images.githubusercontent.com/37195463/134794216-c33f7b43-cb6e-4223-b0a2-8b4d65f7aa14.png)
 
 ## 4. 지역별 거래량
