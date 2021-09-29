@@ -19,11 +19,13 @@
 > HTML/CSS  
 > JavaScript  
 
+## 데이터베이스
+> MySQL  
+
 ## 사용 라이브러리 및 프레임워크
 > Spring Boot 2.4.1  
 > AmChart.JS  
 > Spring Data JPA  
-> MySQL  
 > Thymeleaf  
 > JSON.simple  
 
