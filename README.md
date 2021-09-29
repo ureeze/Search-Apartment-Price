@@ -36,6 +36,8 @@
 ![apart list2](https://user-images.githubusercontent.com/37195463/135212437-cd2d89a0-ca86-4950-97af-26206f2a6bda.png)
 
 ## 4. 실거래가
+> AmChart.JS 라이브러리를 이용하여 XY그래프형식으로 거래시점에 대한 실거래가를 표현
+
 ![xymap](https://user-images.githubusercontent.com/37195463/135212434-66c510ad-b438-43f2-84e7-f0c11ced859d.png)
 
 ## 5. 지역별 거래량
