@@ -5,7 +5,7 @@
 
 
 ## 1. 전체화면
-![그림1](https://user-images.githubusercontent.com/37195463/115117752-142bc880-9fdb-11eb-9af3-a247e60f94ac.png)
+![20210119_003308](https://user-images.githubusercontent.com/37195463/135212444-09e78221-2d85-406b-9fdc-a1c2b556f179.png)
 
 ## 주요 내용
 + 아파트매매 실거래 상세자료 OPEN API를 이용하여 아파트 실거래가를 그래프, 지도, 리스트로 시각화 하여 표현
@@ -31,12 +31,12 @@
 ![apart api](https://user-images.githubusercontent.com/37195463/135212292-55f97693-7a67-4dd9-8c53-f718cf400b06.png)
 
 ## 3. 아파트 거래목록
-![apart list2](https://user-images.githubusercontent.com/37195463/134794276-4acf471f-a30d-4853-9bd0-4f4331b891d2.png)
+![apart list2](https://user-images.githubusercontent.com/37195463/135212437-cd2d89a0-ca86-4950-97af-26206f2a6bda.png)
 
 ## 4. 실거래가
-![xymap2](https://user-images.githubusercontent.com/37195463/134794216-c33f7b43-cb6e-4223-b0a2-8b4d65f7aa14.png)
+![xymap](https://user-images.githubusercontent.com/37195463/135212434-66c510ad-b438-43f2-84e7-f0c11ced859d.png)
 
 ## 5. 지역별 거래량
 > 아파트 거래량을 네이버지도 API를 이용하여 클러스터화 하여 직관적으로 표현
 
-![apart map2](https://user-images.githubusercontent.com/37195463/134794213-dcd248da-eac7-4527-8d6f-43b100d54239.png)
+![apart map2](https://user-images.githubusercontent.com/37195463/135212427-b64e3a61-c5cf-4a1c-9deb-ab6e3785c328.png)
